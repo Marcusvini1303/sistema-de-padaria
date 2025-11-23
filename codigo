@@ -1,1 +1,30 @@
+class Produto:
+    def __init__(self, nome, preco, quantidade):
+        self.nome = nome
+        self.preco = preco
+        self.quantidade = quantidade
 
+    def __str__(self):
+        return f"{self.nome} - R${self.preco:.2f} ({self.quantidade} em estoque)"
+
+class estoque:
+    def __init__(self):
+        self.itens = []
+
+        self.adicionar_produto(Produto("Pão Francês (Kg)", 22.90, 30))
+        self.adicionar_produto(Produto("Pão Integral (Kg)", 28.50, 20))
+        self.adicionar_produto(Produto("Pão de Queijo (Un)", 4.50, 40))
+        self.adicionar_produto(Produto("Sonho de Creme (Un)", 8.00, 25))
+        self.adicionar_produto(Produto("Torta de Morango (Fatia)", 16.50, 15))
+        self.adicionar_produto(Produto("Croissant Presunto e Queijo", 12.00, 12))
+        self.adicionar_produto(Produto("Coxinha de Frango", 10.50, 35))
+        self.adicionar_produto(Produto("Café Expresso (Pequeno)", 6.00, 50))
+        self.adicionar_produto(Produto("Cappuccino (Médio)", 12.00, 40))
+        self.adicionar_produto(Produto("Leite Integral (Litro)", 7.99, 10))
+
+    def adicionar_produto(self, produto):
+        self.itens.append(produto)
+    
+    def listar_produtos(self):
+        for produto in self.itens:
+            print(produto)
